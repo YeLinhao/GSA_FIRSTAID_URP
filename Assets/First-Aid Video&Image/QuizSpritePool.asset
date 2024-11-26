@@ -1,0 +1,21 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b70441c5028383942aae33ca26a1e3f4, type: 3}
+  m_Name: QuizSpritePool
+  m_EditorClassIdentifier: 
+  QuizSprites:
+  - {fileID: 21300000, guid: c97cb81faa882494eb65f29ae1195bc4, type: 3}
+  - {fileID: 21300000, guid: 36e042dd400bc074a974e32becff498f, type: 3}
+  - {fileID: 21300000, guid: 258e0c2c0ea7ddd4881ffd992981b750, type: 3}
+  - {fileID: 21300000, guid: d35fdeedca6eabb448231c3114a21559, type: 3}
+  - {fileID: 21300000, guid: 33dde47966002bd4fabf3eb5d3595cbb, type: 3}
+  - {fileID: 21300000, guid: 165fc82ec0ba14a49a2e41032d4e4675, type: 3}

@@ -17,7 +17,7 @@ public class QTE : MonoBehaviour
         //Initialize
         visualizer.VisualizeKeySequence(keyCodeSequence);
         currentIndex = 0;
-        Debug.Log("Mission Start£¡Press key in Sequence.");
+        Debug.Log("Mission Start!Press key in Sequence.");
     }
 
     void Update()
@@ -31,7 +31,7 @@ public class QTE : MonoBehaviour
                 //if input Correct
                 if (Input.GetKeyDown(keyCodeSequence[currentIndex]))
                 {
-                    Debug.Log("Correct one! £º" + keyCodeSequence[currentIndex].ToString());
+                    Debug.Log("Correct one! " + keyCodeSequence[currentIndex].ToString());
                     currentIndex++; // Move on
 
 
@@ -44,7 +44,7 @@ public class QTE : MonoBehaviour
                 else
                 {
                     StartTask();
-                    Debug.Log("Error£¬Refresh!");
+                    Debug.Log("Error! please Refresh!");
                 }
             }
         }
@@ -52,7 +52,7 @@ public class QTE : MonoBehaviour
     }
     private void CompleteTask()
     {
-        Debug.Log("Mission Complete£¡");
+        Debug.Log("Mission Complete!");
         currentIndex = 0;
     }
 }
