@@ -305,7 +305,7 @@ GameObject:
   - component: {fileID: 259772220}
   - component: {fileID: 259772222}
   m_Layer: 5
-  m_Name: Button (2)
+  m_Name: AnswerSlot (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -350,8 +350,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 258e0c2c0ea7ddd4881ffd992981b750, type: 3}
-  m_Type: 0
+  m_Sprite: {fileID: 10905, guid: 0000000000000000f000000000000000, type: 0}
+  m_Type: 1
   m_PreserveAspect: 0
   m_FillCenter: 1
   m_FillMethod: 4
@@ -1436,7 +1436,7 @@ GameObject:
   - component: {fileID: 1040296641}
   - component: {fileID: 1040296640}
   m_Layer: 5
-  m_Name: Button (4)
+  m_Name: AnswerSlot (4)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1506,8 +1506,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: c97cb81faa882494eb65f29ae1195bc4, type: 3}
-  m_Type: 0
+  m_Sprite: {fileID: 10905, guid: 0000000000000000f000000000000000, type: 0}
+  m_Type: 1
   m_PreserveAspect: 0
   m_FillCenter: 1
   m_FillMethod: 4
@@ -1796,7 +1796,7 @@ GameObject:
   - component: {fileID: 1287670538}
   - component: {fileID: 1287670540}
   m_Layer: 5
-  m_Name: Button (1)
+  m_Name: AnswerSlot (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1841,8 +1841,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: d35fdeedca6eabb448231c3114a21559, type: 3}
-  m_Type: 0
+  m_Sprite: {fileID: 10905, guid: 0000000000000000f000000000000000, type: 0}
+  m_Type: 1
   m_PreserveAspect: 0
   m_FillCenter: 1
   m_FillMethod: 4
@@ -2049,7 +2049,7 @@ GameObject:
   - component: {fileID: 1425598836}
   - component: {fileID: 1425598838}
   m_Layer: 5
-  m_Name: Button (3)
+  m_Name: AnswerSlot (3)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2094,8 +2094,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 36e042dd400bc074a974e32becff498f, type: 3}
-  m_Type: 0
+  m_Sprite: {fileID: 10905, guid: 0000000000000000f000000000000000, type: 0}
+  m_Type: 1
   m_PreserveAspect: 0
   m_FillCenter: 1
   m_FillMethod: 4
@@ -3099,20 +3099,25 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4b390542436b8a8468dbc4ef51b298ab, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  quizSpritePool: {fileID: 0}
-  optionsForChoose:
+  quizSpritePool: {fileID: 11400000, guid: e3ac7b2efa26e554c83bd27f0445b4ca, type: 2}
+  optionBtn:
   - {fileID: 643189085}
   - {fileID: 1224317938}
   - {fileID: 1537466008}
   - {fileID: 1226111680}
   - {fileID: 447823623}
   - {fileID: 1544935495}
-  correctOrderSlots:
+  randomizedOptionSprites: []
+  AnswerSlots:
   - {fileID: 1287670540}
   - {fileID: 259772222}
   - {fileID: 1425598838}
   - {fileID: 1040296640}
-  randomizedSpriteSequence: []
+  CorrectAnswer:
+  - {fileID: 21300000, guid: d35fdeedca6eabb448231c3114a21559, type: 3}
+  - {fileID: 21300000, guid: 258e0c2c0ea7ddd4881ffd992981b750, type: 3}
+  - {fileID: 21300000, guid: 36e042dd400bc074a974e32becff498f, type: 3}
+  - {fileID: 21300000, guid: c97cb81faa882494eb65f29ae1195bc4, type: 3}
 --- !u!4 &2138013913
 Transform:
   m_ObjectHideFlags: 0
