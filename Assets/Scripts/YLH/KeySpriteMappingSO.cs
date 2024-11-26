@@ -14,7 +14,7 @@ public class KeySpriteMappingSO : ScriptableObject
     public List<KeyIconPair> keyIcons = new List<KeyIconPair>();
 
     /// <summary>
-    /// 根据按键获取对应的图标
+    /// return icon by keyCode
     /// </summary>
     public Sprite GetIcon(KeyCode key)
     {
@@ -23,6 +23,6 @@ public class KeySpriteMappingSO : ScriptableObject
             if (pair.key == key)
                 return pair.icon;
         }
-        return null; // 找不到时返回 null
+        return null; // return null when there's nothing
     }
 }
