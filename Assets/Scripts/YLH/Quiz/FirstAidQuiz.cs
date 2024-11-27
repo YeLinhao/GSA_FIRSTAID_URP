@@ -16,6 +16,8 @@ public class FirstAidQuiz: MonoBehaviour
 
     public List<Button> AnswerSlots;
     public List<Sprite> CorrectAnswer;
+
+    public int TempAnsNum = 0;
    
     void Start()
     {
@@ -95,28 +97,34 @@ public class FirstAidQuiz: MonoBehaviour
     }
 
     // This function should be connected to UI events where players can drag and drop or select images.
-    public void OnOptionSelected(Image selectedImage, int slotIndex)
+    public void OnOptionSelected(int BtnID)
     {
-        // Check if the selected image matches the correct order (in correct sequence)
-        AnswerSlots[slotIndex].GetComponent<Image>().sprite = selectedImage.sprite;
+        //Add sprite you clicked to the first empty slot
+        for (int i = 0; i < AnswerSlots.Count; i++)
+        {
+            if (AnswerSlots[i].interactable == false)
+            {
+                AnswerSlots[i].GetComponent<Image>().sprite = optionBtn[BtnID].GetComponent<Image>().sprite;
+                //allow to be canceled
+                AnswerSlots[i].interactable = true;
+                break;
+            }
+        }
+        TempAnsNum++;
 
         // Once the player has placed images in all the slots, check if the answer is correct
-        if (AreAllSlotsFilled())
+        if (TempAnsNum == AnswerSlots.Count)
         {
             CheckAnswer();
         }
     }
 
-    // Check if all slots have been filled with images
-    bool AreAllSlotsFilled()
+    public void OnAnswerCanceled(int AnswerSlotID) 
     {
-        foreach (var slot in AnswerSlots)
-        {
-            if (slot.GetComponent<Image>().sprite == null) // If any slot is empty, return false
-            {
-                return false;
-            }
-        }
-        return true; // All slots are filled
+        AnswerSlots[AnswerSlotID].GetComponent<Image>().sprite = null;
+        AnswerSlots[AnswerSlotID].interactable = false;
+        TempAnsNum--;
     }
+
+
 }
