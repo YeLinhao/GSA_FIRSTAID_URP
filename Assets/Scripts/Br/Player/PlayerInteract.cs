@@ -5,6 +5,7 @@ using UnityEngine;
 public class PlayerInteract : MonoBehaviour
 {
     public Entity entity;
+    public NPC npc;
     void Update()
     {
         if (Input.GetKeyDown(KeyCode.E))
@@ -12,9 +13,9 @@ public class PlayerInteract : MonoBehaviour
             Collider[] colliderAvalible = Physics.OverlapSphere(entity.collCenter.position, entity.InteractRange);
             foreach (Collider collider in colliderAvalible)
             {
-                if(collider.TryGetComponent(out Entity entity))
+                if(collider)
                 {
-                    entity.Interact();
+                    npc.Interact();
                 }
             }
         }

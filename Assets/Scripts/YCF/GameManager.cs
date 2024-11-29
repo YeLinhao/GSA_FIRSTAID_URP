@@ -21,7 +21,7 @@ public class GameManager : MonoBehaviour
         GameOver
     }
 
-    [SerializeField] private Player player;
+    [SerializeField] private GameObject player;
 
 
     private State state;
@@ -109,11 +109,12 @@ public class GameManager : MonoBehaviour
 
     private void DisablePlayer()
     {
-        player.enabled = false;
+        Debug.Log("玩家已禁用！");
+        player.SetActive(false);
     }
     private void EnablePlayer()
     {
-        player.enabled = true;
+        player.SetActive(true);
     }
     public bool IsWaitingToStartState()
     {

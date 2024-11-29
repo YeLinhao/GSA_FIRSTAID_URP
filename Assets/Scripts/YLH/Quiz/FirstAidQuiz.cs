@@ -89,6 +89,8 @@ public class FirstAidQuiz: MonoBehaviour
         if (isCorrect)
         {
             Debug.Log("Correct! You completed the first aid sequence.");
+            this.gameObject.SetActive(false);
+            
         }
         else
         {

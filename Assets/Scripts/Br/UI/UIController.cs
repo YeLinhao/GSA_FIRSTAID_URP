@@ -8,7 +8,7 @@ public class UIController : MonoBehaviour
     public static bool GameisPaused = false;
     public GameObject pauseMenuUI;
     public GameObject pauseButton;
-    //public GameObject InteractButton;
+
 
     void Update()
     {
@@ -23,7 +23,10 @@ public class UIController : MonoBehaviour
                 PauseGame();
             }
         }
-    }
+
+
+        }
+    
 
 
     public void ResumeGame()
@@ -42,15 +45,7 @@ public class UIController : MonoBehaviour
         GameisPaused = true;
     }
 
-    //public void Show()
-    //{
-    //    InteractButton.SetActive(true);
-    //}
 
-    //public void Hide()
-    //{
-    //    InteractButton.SetActive(false);
-    //}
 
     public void LoadScene(string a)
     {

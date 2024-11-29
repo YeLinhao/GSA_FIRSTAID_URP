@@ -10,11 +10,11 @@ public class Entity : MonoBehaviour
     public Rigidbody rb { get; private set; }
     #endregion
 
-    [Header("CollisionInfo")]
-    [SerializeField] public Transform groundCheck;
-    [SerializeField] public Transform wallCheck;
-    [SerializeField] protected LayerMask whatIsGround;
-    [SerializeField] protected LayerMask whatIsWall;
+    // [Header("CollisionInfo")]
+    // [SerializeField] public Transform groundCheck;
+    // [SerializeField] public Transform wallCheck;
+    // [SerializeField] protected LayerMask whatIsGround;
+    // [SerializeField] protected LayerMask whatIsWall;
     [SerializeField] public float InteractRange;
     [SerializeField] public Transform collCenter;
 
@@ -35,8 +35,5 @@ public class Entity : MonoBehaviour
 
     }
 
-    public void Interact()
-    {
-        Debug.Log("Hi");
-    }
+
 }
