@@ -76,10 +76,9 @@ public class GameManager : MonoBehaviour
                 break;
             case State.GameOver:
                 break;
-            default:
-                break;
         }
     }
+
 
     private void TurnToWaitingToStart()
     {
