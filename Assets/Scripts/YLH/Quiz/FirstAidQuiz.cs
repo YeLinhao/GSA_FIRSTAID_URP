@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -27,6 +28,7 @@ public class FirstAidQuiz: MonoBehaviour
     // Function to randomize the options and display them
     void SetupQuiz()
     {
+        randomizedOptionSprites.Clear();
         AddCorrectOptions(randomizedOptionSprites,CorrectAnswer);
         AddRandomWrongAnswer(randomizedOptionSprites,quizSpritePool,2);
         ShuffleList(randomizedOptionSprites);
@@ -89,8 +91,17 @@ public class FirstAidQuiz: MonoBehaviour
         if (isCorrect)
         {
             Debug.Log("Correct! You completed the first aid sequence.");
+            ScoreManager.Instance.score++;
             this.gameObject.SetActive(false);
-            
+            // Reset Image in AnswerSlots
+            foreach ( Button btn in AnswerSlots)
+            {
+                btn.GetComponent<Image>().sprite = null;
+                btn.interactable = false;
+                TempAnsNum--;
+            }
+            //Reset Random Options
+            SetupQuiz();
         }
         else
         {
