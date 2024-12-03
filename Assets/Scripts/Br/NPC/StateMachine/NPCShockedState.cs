@@ -11,6 +11,7 @@ public class NPCShockedState : NPCState
     public override void Enter()
     {
         base.Enter();
+        Debug.Log("HELP!");
     }
 
     public override void Exit()
@@ -18,13 +19,10 @@ public class NPCShockedState : NPCState
         base.Exit();
     }
 
-    public override int GetHashCode()
-    {
-        return base.GetHashCode();
-    }
-
     public override void Update()
     {
         base.Update();
+        Debug.Log("I'm Shocked!");
+
     }
 }

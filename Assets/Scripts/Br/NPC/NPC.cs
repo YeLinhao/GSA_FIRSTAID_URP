@@ -7,7 +7,13 @@ public class NPC : Entity
     #region StateMachine
     public NPCStateMachine stateMachine {  get; private set; }
     public string lastAnimBoolName { get; private set; }
+    public NPCIdleState idleState { get; private set; }
+    public NPCShockedState shockedState { get; private set; }
+    public NPCComaState comaState { get; private set; }
     #endregion
+
+    public bool isShocked = false;
+    public bool isHeated = false;
 
     public GameObject Quiz;
 
@@ -15,6 +21,9 @@ public class NPC : Entity
     {
         base.Awake();
         stateMachine = new NPCStateMachine();
+        idleState = new NPCIdleState(stateMachine, this, "Idle");
+        shockedState = new NPCShockedState(stateMachine, this, "Shocked");
+        comaState = new NPCComaState(stateMachine, this, "Coma");
     }
 
     protected override void Start()

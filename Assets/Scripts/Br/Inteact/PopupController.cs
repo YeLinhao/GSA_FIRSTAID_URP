@@ -7,16 +7,17 @@ public class PopupController : MonoBehaviour
 
     public GameObject InteractButton;
     [SerializeField]private PlayerInteract playerInteract;
+    [SerializeField] private NPC npc;
     // Start is called before the first frame update
     void Start()
     {
-        
+        npc = FindObjectOfType < NPC>();
     }
 
     // Update is called once per frame
     void Update()
     {
-        if(playerInteract.GetInteractableEntity() != null){
+        if(playerInteract.GetInteractableEntity() != null && npc.isShocked == true){
         Show();
         }else{
         Hide();

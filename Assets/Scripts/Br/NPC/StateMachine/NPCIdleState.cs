@@ -21,5 +21,10 @@ public class NPCIdleState : NPCState
     public override void Update()
     {
         base.Update();
+        if (npcBase.isShocked == true)
+        {
+            Debug.Log("One worker is Shocked!");
+            stateMachine.ChangeState(npcBase.shockedState);
+        }
     }
 }

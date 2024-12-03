@@ -8,7 +8,7 @@ public class PlayerInteract : MonoBehaviour
     public NPC npc;
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.E))
+        if (Input.GetKeyDown(KeyCode.E) && npc.isShocked == true)
         {
             Collider[] colliderAvalible = Physics.OverlapSphere(entity.collCenter.position, entity.InteractRange);
             foreach (Collider collider in colliderAvalible)

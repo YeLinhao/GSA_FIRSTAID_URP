@@ -796,6 +796,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 86883004}
+  - component: {fileID: 86883005}
   m_Layer: 0
   m_Name: --------GameObject------------
   m_TagString: Untagged
@@ -818,6 +819,19 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &86883005
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 86883003}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 19471da17e582de4cbca87b6a75ca966, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  npcs: []
 --- !u!1 &87027659 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 7c1ab0be142701340bdd4ed5e04d59d8,
@@ -1284,6 +1298,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   InteractButton: {fileID: 1688524924}
   playerInteract: {fileID: 1168001806}
+  npc: {fileID: 0}
 --- !u!4 &116276665
 Transform:
   m_ObjectHideFlags: 0
@@ -12659,6 +12674,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   InteractRange: 2
   collCenter: {fileID: 2146930844}
+  isShocked: 0
+  isHeated: 0
   Quiz: {fileID: 282288856}
 --- !u!4 &1326261086
 Transform:
