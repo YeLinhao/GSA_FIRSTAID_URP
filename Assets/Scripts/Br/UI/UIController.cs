@@ -40,7 +40,7 @@ public class UIController : MonoBehaviour
     public void PauseGame()
     {
         pauseMenuUI.SetActive(true);
-        pauseButton.SetActive(false);
+        pauseButton.SetActive(true);
         Time.timeScale = 0f;
         GameisPaused = true;
     }

@@ -7,6 +7,8 @@ public class Levelselector : MonoBehaviour
     
     public void Openscene()
     {
+
         SceneManager.LoadScene(1);
+
     }
 }

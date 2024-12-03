@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -6,6 +7,7 @@ public class Ambulance : MonoBehaviour
 {
     public Animator ambulanceAnimator;
     public string animationName = "AmbulanceAnimation";
+    public GameObject GameTime;
 
     private bool animationStarted = false;
 
@@ -24,18 +26,22 @@ public class Ambulance : MonoBehaviour
             if (!animationStarted)
             {
                 animationStarted = true;
-                Invoke(nameof(HideNPCs), 1f); 
+                //GameTime.SetActive(false);
+                Invoke(nameof(HideNPCs), 1f);
             }
         }
     }
 
+
     void HideNPCs()
     {
-        GameObject[] npcs = GameObject.FindGameObjectsWithTag("NPC"); 
+        GameObject[] npcs = GameObject.FindGameObjectsWithTag("NPC");
 
         foreach (GameObject npc in npcs)
         {
-            npc.SetActive(false); 
+            npc.SetActive(false);
         }
     }
+  
 }
+
