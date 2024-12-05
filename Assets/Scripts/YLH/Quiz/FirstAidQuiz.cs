@@ -30,7 +30,7 @@ public class FirstAidQuiz: MonoBehaviour
     {
         randomizedOptionSprites.Clear();
         AddCorrectOptions(randomizedOptionSprites,CorrectAnswer);
-        AddRandomWrongAnswer(randomizedOptionSprites,quizSpritePool,2);
+        AddRandomWrongAnswer(randomizedOptionSprites,quizSpritePool,optionBtn.Count-AnswerSlots.Count);
         ShuffleList(randomizedOptionSprites);
 
         //Apply randomized sprite to Btn.
@@ -102,6 +102,7 @@ public class FirstAidQuiz: MonoBehaviour
             }
             //Reset Random Options
             SetupQuiz();
+            
         }
         else
         {

@@ -1223,6 +1223,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   InteractButton: {fileID: 1688524924}
   playerInteract: {fileID: 1168001806}
+  npc: {fileID: 0}
 --- !u!4 &116276665
 Transform:
   m_ObjectHideFlags: 0
@@ -10617,6 +10618,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   InteractRange: 2
   collCenter: {fileID: 2146930844}
+  isShocked: 0
+  isHeated: 0
   Quiz: {fileID: 282288856}
 --- !u!4 &1326261086
 Transform:
@@ -15089,7 +15092,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1824148384
 RectTransform:
   m_ObjectHideFlags: 0
@@ -16316,7 +16319,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 951eaa292dae1d742bca0d7c1708c5b9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  SocreNum: 3
+  SocreNum: 6
   ScoreText: {fileID: 2112004699}
   winPanel: {fileID: 721303610}
   stars:
