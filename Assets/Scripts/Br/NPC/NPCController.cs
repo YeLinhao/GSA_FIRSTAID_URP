@@ -1,18 +1,35 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Threading;
 using UnityEngine;
 
 public class NPCController : MonoBehaviour
 {
+    public static NPCController Instance;
 
+
+    public NPC npc;
     public List<NPC> npcs;
+    public NPC isBeingSaved;
 
+    void Awake()
+    {
+       Instance = this;
+    }
+    
     public void Start()
     {
         npcs = new List<NPC>(FindObjectsOfType<NPC>());
         StartCoroutine(whoIsSick());
+        // Sick();
     }
 
+    public void Sick(){
+        NPC shocked = npcs[0];
+        shocked.isShocked = true;
+        NPC heated = npcs[1];
+
+    }
 
     public IEnumerator whoIsSick()
     {

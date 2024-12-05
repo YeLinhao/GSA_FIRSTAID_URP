@@ -15,7 +15,6 @@ public class PanelManager : MonoBehaviour
     public void CloseIntroPanel()
     {
         introPanel.SetActive(false); 
-        videoPanel.SetActive(true);  
     }
 
 

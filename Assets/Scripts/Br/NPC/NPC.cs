@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class NPC : Entity
@@ -16,6 +17,7 @@ public class NPC : Entity
     public bool isHeated = false;
 
     public GameObject Quiz;
+    public GameObject Video;
 
     protected override void Awake()
     {
@@ -29,17 +31,35 @@ public class NPC : Entity
     protected override void Start()
     {
         base.Start();
+        stateMachine.Initialize(idleState);
     }
 
     protected override void Update()
     {
         base.Update();
-        // stateMachine.currentState.Update();
+        stateMachine.currentState.Update();
     }
 
     public virtual void AssignLastAnimName(string _animBoolName) => lastAnimBoolName = _animBoolName;
 
     public void Interact(){
-        Quiz.SetActive(true);
+        Debug.Log("Interact!");
+        if(GameManager.Instance == null)
+        {
+            Debug.Log("Please start with Begin Scene");
+        }
+        else if(GameManager.Instance.GameMode == 0)
+        {
+            Debug.Log("Video!");
+            Video.SetActive(true);
+            NPCController.Instance.isBeingSaved = this;
+        }
+       else if (GameManager.Instance.GameMode >= 0)
+        {
+            Quiz.SetActive(true);   
+            NPCController.Instance.isBeingSaved = this;
+        }
+
+        
     }
 }

@@ -11,11 +11,7 @@ public class NPCIdleState : NPCState
     public override void Enter()
     {
         base.Enter();
-    }
-
-    public override void Exit()
-    {
-        base.Exit();
+        Debug.Log("Now Idle");
     }
 
     public override void Update()
@@ -27,4 +23,10 @@ public class NPCIdleState : NPCState
             stateMachine.ChangeState(npcBase.shockedState);
         }
     }
+    
+    public override void Exit()
+    {
+        base.Exit();
+    }
+
 }

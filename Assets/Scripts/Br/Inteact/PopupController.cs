@@ -17,7 +17,7 @@ public class PopupController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(playerInteract.GetInteractableEntity() != null && npc.isShocked == true){
+        if(playerInteract.GetInteractableEntity() != null){
         Show();
         }else{
         Hide();
