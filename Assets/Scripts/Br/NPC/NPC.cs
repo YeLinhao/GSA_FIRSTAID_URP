@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.Animations.Rigging;
 
 public class NPC : Entity
 {
@@ -10,7 +11,14 @@ public class NPC : Entity
     public string lastAnimBoolName { get; private set; }
     public NPCIdleState idleState { get; private set; }
     public NPCShockedState shockedState { get; private set; }
-    public NPCComaState comaState { get; private set; }
+    public NPCHeatStrokeState heatStrokeState { get; private set; }
+    public NPCTickBiteState tickBiteState { get; private set; }
+    public NPCAsthmaState asthmaState { get; private set; }
+    public NPCChokeState chokeState { get; private set; }
+    public NPCBleedingState bleedingState { get; private set; }
+    public NPCConvulsiveSeizureState CSState { get; private set; }
+    public NPCTwistState twistState { get; private set; }
+    public NPCDiabeticState diabeticState { get; private set; }
     #endregion
 
     public bool isShocked = false;
@@ -25,7 +33,14 @@ public class NPC : Entity
         stateMachine = new NPCStateMachine();
         idleState = new NPCIdleState(stateMachine, this, "Idle");
         shockedState = new NPCShockedState(stateMachine, this, "Shocked");
-        comaState = new NPCComaState(stateMachine, this, "Coma");
+        heatStrokeState = new NPCHeatStrokeState(stateMachine, this, "HeatStroke");
+        tickBiteState = new NPCTickBiteState(stateMachine, this, "TickBite");
+        asthmaState = new NPCAsthmaState(stateMachine, this, "Asthma");
+        chokeState = new NPCChokeState(stateMachine, this, "Choke");
+        bleedingState = new NPCBleedingState(stateMachine, this, "Bleeidng");
+        CSState = new NPCConvulsiveSeizureState(stateMachine, this, "CS");
+        twistState = new NPCTwistState(stateMachine, this, "twist");
+        diabeticState = new NPCDiabeticState(stateMachine, this, "diabetic");
     }
 
     protected override void Start()
