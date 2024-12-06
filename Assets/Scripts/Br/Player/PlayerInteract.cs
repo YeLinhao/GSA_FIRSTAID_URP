@@ -6,18 +6,31 @@ public class PlayerInteract : MonoBehaviour
 {
     public Entity entity;
     public NPC npc;
+    private bool isPlayerInRange = false;
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.CompareTag("Player"))
+        {
+            isPlayerInRange = true;
+            NPCController.Instance.SavingHint.gameObject.SetActive(true);
+        }
+    }
+    private void OnTriggerExit(Collider other)
+    {
+        if (other.CompareTag("Player"))
+        {
+            isPlayerInRange = false;
+            NPCController.Instance.SavingHint.gameObject.SetActive(false);
+        }
+    }
+
+
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.E) && npc.isShocked == true)
+        if (Input.GetKeyDown(KeyCode.E) && isPlayerInRange && npc.isShocked == true)
         {
-            Collider[] colliderAvalible = Physics.OverlapSphere(entity.collCenter.position, entity.InteractRange);
-            foreach (Collider collider in colliderAvalible)
-            {
-                if(collider)
-                {
-                    npc.Interact();
-                }
-            }
+            npc.Interact();
         }
     }
 

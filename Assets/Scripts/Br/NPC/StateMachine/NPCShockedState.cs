@@ -22,7 +22,7 @@ public class NPCShockedState : NPCState
     public override void Update()
     {
         base.Update();
-        Debug.Log("I'm Shocked!");
+        //Debug.Log("I'm Shocked!");
 
     }
 }

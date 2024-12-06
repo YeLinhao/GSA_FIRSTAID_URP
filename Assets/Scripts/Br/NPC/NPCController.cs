@@ -2,15 +2,17 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Threading;
 using UnityEngine;
+using UnityEngine.UI;
+using TMPro;
 
 public class NPCController : MonoBehaviour
 {
     public static NPCController Instance;
 
 
-    public NPC npc;
     public List<NPC> npcs;
     public NPC isBeingSaved;
+    public TMP_Text SavingHint;
 
     void Awake()
     {
