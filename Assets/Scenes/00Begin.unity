@@ -581,11 +581,11 @@ MonoBehaviour:
       - m_Target: {fileID: 835364307}
         m_TargetAssemblyTypeName: Levelselector, Assembly-CSharp
         m_MethodName: Openscene
-        m_Mode: 1
+        m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
+          m_IntArgument: 1
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
@@ -739,11 +739,11 @@ MonoBehaviour:
       - m_Target: {fileID: 1102586094}
         m_TargetAssemblyTypeName: Levelselector, Assembly-CSharp
         m_MethodName: Openscene
-        m_Mode: 1
+        m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
+          m_IntArgument: 2
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0

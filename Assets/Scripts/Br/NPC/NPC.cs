@@ -19,6 +19,7 @@ public class NPC : Entity
     public NPCConvulsiveSeizureState CSState { get; private set; }
     public NPCTwistState twistState { get; private set; }
     public NPCDiabeticState diabeticState { get; private set; }
+    public NPCNoseBleedingState noseBleedingState { get; private set; }
     #endregion
 
     //Todo:当NPC状态改变时，头顶气泡改变
@@ -27,16 +28,16 @@ public class NPC : Entity
     public bool isHeatStroked = false;
     public bool isTickBited = false;
     public bool isAsthma = false;
-    public bool isChocked = false;
+    public bool isChoked = false;
     public bool isBleeding = false;
     public bool isConvulsiveSeizure = false;
     public bool isNoseBleeding = false;
     public bool isTwisted = false;
     public bool isDiabetic = false;
+
     public bool isHealed = false;
 
-    public GameObject Quiz;
-    public GameObject Video;
+
 
     protected override void Awake()
     {
@@ -52,6 +53,7 @@ public class NPC : Entity
         CSState = new NPCConvulsiveSeizureState(stateMachine, this, "CS");
         twistState = new NPCTwistState(stateMachine, this, "twist");
         diabeticState = new NPCDiabeticState(stateMachine, this, "diabetic");
+        noseBleedingState = new NPCNoseBleedingState(stateMachine, this, "noseBleeding");
     }
 
     protected override void Start()
@@ -68,25 +70,71 @@ public class NPC : Entity
 
     public virtual void AssignLastAnimName(string _animBoolName) => lastAnimBoolName = _animBoolName;
 
-    public void Interact(){
+    public void Interact()
+    {
         Debug.Log("Interact!");
-        //Todo:根据npc身上的标记触发相应的视频/Quiz
-        if(GameManager.Instance == null)
+        if (CheckIfSick())//Only Sick people can be saved
         {
-            Debug.Log("Please start with Begin Scene");
+            //Todo:根据npc身上的标记触发相应的视频/Quiz
+            if (GameManager.Instance == null)
+            {
+                Debug.Log("Please start with Begin Scene");
+            }
+            else if (GameManager.Instance.GameMode == 0)//if tutorial then video
+            {
+                NPCController.Instance.StartSavingVideo(CheckSickType());
+                NPCController.Instance.isBeingSaved = this;
+            }
+            else if (GameManager.Instance.GameMode >= 0)//if gamemode then quiz
+            {
+                NPCController.Instance.StartSavingQuiz(CheckSickType());
+                NPCController.Instance.isBeingSaved = this;
+            }
         }
-        else if(GameManager.Instance.GameMode == 0)
-        {
-            Debug.Log("Video!");
-            Video.SetActive(true);
-            NPCController.Instance.isBeingSaved = this;
-        }
-       else if (GameManager.Instance.GameMode >= 0)
-        {
-            Quiz.SetActive(true);   
-            NPCController.Instance.isBeingSaved = this;
-        }
+      
+    }
 
-        
+    public bool CheckIfSick()
+    {
+        bool ifSick = isAsthma || isBleeding || isChoked || isConvulsiveSeizure || isDiabetic || isHeatStroked || isNoseBleeding || isShocked || isTickBited || isTwisted;
+        if (isHealed)
+        {
+            ifSick = false;
+        }
+        return ifSick;
+    }
+
+    public int CheckSickType()
+    {
+        int SickType = -1;
+
+        if (isTickBited)
+            SickType = 0;
+        else if (isAsthma)
+            SickType = 1;
+        else if (isHeatStroked)
+            SickType = 2;
+        else if (isShocked)
+            SickType = 3;
+        else if (isChoked)
+            SickType = 4;
+        else if (isBleeding)
+            SickType = 5;
+        else if (isConvulsiveSeizure)
+            SickType = 6;
+        else if (isNoseBleeding)
+            SickType = 7;
+        else if (isTwisted)
+            SickType = 8;
+        else if (isDiabetic)
+            SickType = 9;
+
+        return SickType;
+    }
+
+    public void BubbleSpawn()
+    {
+        int SickType = CheckSickType();
+
     }
 }

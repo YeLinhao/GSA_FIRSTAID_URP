@@ -11,7 +11,7 @@ public class NPCShockedState : NPCState
     public override void Enter()
     {
         base.Enter();
-        Debug.Log("HELP!");
+        base.npcBase.BubbleSpawn();
     }
 
     public override void Exit()
@@ -22,7 +22,9 @@ public class NPCShockedState : NPCState
     public override void Update()
     {
         base.Update();
-        //Debug.Log("I'm Shocked!");
-
+        if (npcBase.isHealed == true)
+        {
+            //stateMachine.ChangeState(npcBase.);
+        }
     }
 }

@@ -8,7 +8,7 @@ public class PanelManager : MonoBehaviour
     {
         
         introPanel.SetActive(true);
-        videoPanel.SetActive(false);
+        
     }
 
     
@@ -20,6 +20,11 @@ public class PanelManager : MonoBehaviour
 
     public void CloseVideoPanel()
     {
-        videoPanel.SetActive(false);
+        for (int i = 0; i < videoPanel.transform.childCount; i++)
+        {
+            Transform child = videoPanel.transform.GetChild(i);
+            child.gameObject.SetActive(false);
+        }
+        
     }
 }

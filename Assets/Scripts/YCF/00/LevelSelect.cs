@@ -5,10 +5,10 @@ UnityEngine.SceneManagement;
 public class Levelselector : MonoBehaviour
 {
     
-    public void Openscene()
+    public void Openscene(int LevelNum)
     {
 
-        SceneManager.LoadScene(1);
+        SceneManager.LoadScene(LevelNum);
 
     }
 }

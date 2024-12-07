@@ -11,7 +11,6 @@ public class NPCIdleState : NPCState
     public override void Enter()
     {
         base.Enter();
-        Debug.Log("Now Idle");
     }
 
     public override void Update()
@@ -19,8 +18,43 @@ public class NPCIdleState : NPCState
         base.Update();
         if (npcBase.isShocked == true)
         {
-            Debug.Log("One worker is Shocked!");
             stateMachine.ChangeState(npcBase.shockedState);
+        }
+        else if (npcBase.isHeatStroked == true)
+        {
+            stateMachine.ChangeState(npcBase.heatStrokeState);
+        }
+        else if (npcBase.isTickBited == true)
+        {
+            stateMachine.ChangeState(npcBase.tickBiteState);
+        }
+        else if (npcBase.isAsthma == true)
+        {
+            stateMachine.ChangeState(npcBase.asthmaState);
+        }
+        else if (npcBase.isChoked == true)
+        {
+            stateMachine.ChangeState(npcBase.chokeState);
+        }
+        else if (npcBase.isBleeding == true)
+        {
+            stateMachine.ChangeState(npcBase.bleedingState);
+        }
+        else if (npcBase.isConvulsiveSeizure == true)
+        {
+            stateMachine.ChangeState(npcBase.CSState);
+        }
+        else if (npcBase.isNoseBleeding == true)
+        {
+            stateMachine.ChangeState(npcBase.noseBleedingState);
+        }
+        else if (npcBase.isTwisted == true)
+        {
+            stateMachine.ChangeState(npcBase.twistState);
+        }
+        else if (npcBase.isDiabetic == true)
+        {
+            stateMachine.ChangeState(npcBase.diabeticState);
         }
     }
     

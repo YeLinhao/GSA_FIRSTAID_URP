@@ -28,7 +28,7 @@ public class PlayerInteract : MonoBehaviour
 
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.E) && isPlayerInRange && npc.isShocked == true)
+        if (Input.GetKeyDown(KeyCode.E) && isPlayerInRange)
         {
             npc.Interact();
         }
