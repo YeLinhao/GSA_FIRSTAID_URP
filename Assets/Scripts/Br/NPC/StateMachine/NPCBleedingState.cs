@@ -11,6 +11,7 @@ public class NPCBleedingState : NPCState
     public override void Enter()
     {
         base.Enter();
+        base.npcBase.BubbleSpawn();
     }
 
     public override void Exit()

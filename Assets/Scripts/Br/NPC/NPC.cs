@@ -20,6 +20,7 @@ public class NPC : Entity
     public NPCTwistState twistState { get; private set; }
     public NPCDiabeticState diabeticState { get; private set; }
     public NPCNoseBleedingState noseBleedingState { get; private set; }
+    public NPCHealedState healedState { get; private set; }
     #endregion
 
     //Todo:当NPC状态改变时，头顶气泡改变
@@ -37,7 +38,8 @@ public class NPC : Entity
 
     public bool isHealed = false;
 
-
+    public GameObject Bubble;
+    public BubbleSpriteSO BubbleSpritePool;
 
     protected override void Awake()
     {
@@ -54,6 +56,7 @@ public class NPC : Entity
         twistState = new NPCTwistState(stateMachine, this, "twist");
         diabeticState = new NPCDiabeticState(stateMachine, this, "diabetic");
         noseBleedingState = new NPCNoseBleedingState(stateMachine, this, "noseBleeding");
+        healedState = new NPCHealedState(stateMachine, this, "Healed");
     }
 
     protected override void Start()
@@ -136,5 +139,12 @@ public class NPC : Entity
     {
         int SickType = CheckSickType();
 
+        // 计算生成位置（相对于当前物体的位置偏移）
+        Vector3 spawnPosition = transform.position + new Vector3(0, 3, 0);
+
+        // 实例化Prefab并设置为当前物体的子物体
+        GameObject child = Instantiate(Bubble, spawnPosition, Quaternion.identity, transform);
+
+        child.GetComponent<SpriteRenderer>().sprite = BubbleSpritePool.BubbleSprites[SickType]; 
     }
 }

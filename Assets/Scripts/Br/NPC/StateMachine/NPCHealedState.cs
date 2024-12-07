@@ -2,16 +2,15 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class NPCNoseBleedingState : NPCState
+public class NPCHealedState : NPCState
 {
-    public NPCNoseBleedingState(NPCStateMachine _stateMachine, NPC _npcBase, string _animBoolName) : base(_stateMachine, _npcBase, _animBoolName)
+    public NPCHealedState(NPCStateMachine _stateMachine, NPC _npcBase, string _animBoolName) : base(_stateMachine, _npcBase, _animBoolName)
     {
     }
 
     public override void Enter()
     {
         base.Enter();
-        base.npcBase.BubbleSpawn();
     }
 
     public override void Exit()
