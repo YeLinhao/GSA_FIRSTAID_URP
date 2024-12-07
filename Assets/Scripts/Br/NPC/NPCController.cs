@@ -46,12 +46,19 @@ public class NPCController : MonoBehaviour
                 int randomIndex = Random.Range(0, npcs.Count);
                 NPC sickNpc = npcs[randomIndex];
 
-                RandomSickAssign(sickNpc);//Todo:改成从十种病随机分配
+                RandomSickAssign(sickNpc);
                 Debug.Log(sickNpc.gameObject.name + "Random Sickness Assigned");
-
                 npcs.RemoveAt(randomIndex);
 
-                yield return new WaitForSeconds(10f);
+                if ((GameManager.Instance.GameMode - 1) % 3 == 0)
+                {
+                    yield return new WaitForSeconds(10f);
+                }
+                if ((GameManager.Instance.GameMode + 1) % 3 == 0)
+                {
+                    yield return new WaitForSeconds(5f);
+                }
+                
             }
 
         }
@@ -69,7 +76,7 @@ public class NPCController : MonoBehaviour
         {
             Debug.Log("Please Start with Beginning Scene");
         }
-        else if (GameManager.Instance.GameMode == 1)//Factory
+        else if (GameManager.Instance.GameMode == 1 || GameManager.Instance.GameMode == 2)//Factory Game
         {
             int randomIndex = Random.Range(0, 3);
             switch (randomIndex)
@@ -88,7 +95,7 @@ public class NPCController : MonoBehaviour
                     break;
             }
         }
-        else if (GameManager.Instance.GameMode == 2)//Classroom
+        else if (GameManager.Instance.GameMode == 4 || GameManager.Instance.GameMode == 5)//Classroom Game
         {
             int randomIndex = Random.Range(0, 3);
             switch (randomIndex)
@@ -107,7 +114,7 @@ public class NPCController : MonoBehaviour
                     break;
             }
         }
-        else if (GameManager.Instance.GameMode == 3)//Park
+        else if (GameManager.Instance.GameMode == 7 || GameManager.Instance.GameMode == 8)//Park Game
         {
             int randomIndex = Random.Range(0, 4);
             switch (randomIndex)

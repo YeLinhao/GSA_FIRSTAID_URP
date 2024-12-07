@@ -162,6 +162,10 @@ public class NPC : Entity
 
     public void NPCHealed()
     {
+
+
+        ScoreManager.Instance.score++;
+
         isTickBited = false;
         isAsthma = false;
         isHeatStroked = false;
