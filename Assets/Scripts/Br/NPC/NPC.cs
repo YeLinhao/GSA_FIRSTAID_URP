@@ -21,8 +21,19 @@ public class NPC : Entity
     public NPCDiabeticState diabeticState { get; private set; }
     #endregion
 
+    //Todo:当NPC状态改变时，头顶气泡改变
+    //Todo:NPC碰撞体 idle动画（在原地溜达） 生病动画（脑袋晕） 治愈动画（躺倒）
     public bool isShocked = false;
-    public bool isHeated = false;
+    public bool isHeatStroked = false;
+    public bool isTickBited = false;
+    public bool isAsthma = false;
+    public bool isChocked = false;
+    public bool isBleeding = false;
+    public bool isConvulsiveSeizure = false;
+    public bool isNoseBleeding = false;
+    public bool isTwisted = false;
+    public bool isDiabetic = false;
+    public bool isHealed = false;
 
     public GameObject Quiz;
     public GameObject Video;
@@ -59,6 +70,7 @@ public class NPC : Entity
 
     public void Interact(){
         Debug.Log("Interact!");
+        //Todo:根据npc身上的标记触发相应的视频/Quiz
         if(GameManager.Instance == null)
         {
             Debug.Log("Please start with Begin Scene");

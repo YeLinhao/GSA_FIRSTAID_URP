@@ -40,7 +40,7 @@ public class NPCController : MonoBehaviour
             int randomIndex = Random.Range(0, npcs.Count);
             NPC sickNpc = npcs[randomIndex];
 
-            sickNpc.isShocked = true;
+            sickNpc.isShocked = true;//Todo:改成从十种病随机分配
             Debug.Log("NPC is shocked");
 
             npcs.RemoveAt(randomIndex);
