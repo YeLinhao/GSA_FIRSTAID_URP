@@ -20,6 +20,7 @@ public class NPC : Entity
     public NPCTwistState twistState { get; private set; }
     public NPCDiabeticState diabeticState { get; private set; }
     public NPCNoseBleedingState noseBleedingState { get; private set; }
+    public NPCHealedState healedState { get; private set; }
     #endregion
 
     //Todo:当NPC状态改变时，头顶气泡改变
@@ -54,6 +55,7 @@ public class NPC : Entity
         twistState = new NPCTwistState(stateMachine, this, "twist");
         diabeticState = new NPCDiabeticState(stateMachine, this, "diabetic");
         noseBleedingState = new NPCNoseBleedingState(stateMachine, this, "noseBleeding");
+        healedState = new NPCHealedState(stateMachine, this, "Healed");
     }
 
     protected override void Start()
