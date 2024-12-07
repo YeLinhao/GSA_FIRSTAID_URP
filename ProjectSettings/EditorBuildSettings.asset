@@ -11,7 +11,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/01Level 1.unity
     guid: 9fc0d4010bbf28b4594072e72b8655ab
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/Level1-Factory.unity
     guid: 65013a03333bcbc48b0ad5d7da41f21c
   - enabled: 1
@@ -20,6 +20,12 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/School-PlayGame.unity
     guid: 1ddbc6e7385680b459f390890d9df4ac
+  - enabled: 1
+    path: Assets/Scenes/Park--tutorial.unity
+    guid: 38813be58c46e984bbcb37f4a06779bf
+  - enabled: 1
+    path: Assets/Scenes/Park-PlayGame.unity
+    guid: e97b21f1625b5aa4797ba56e5d58b054
   - enabled: 0
     path: Assets/Scenes/02Level 2.unity
     guid: d68d25c6b4d2b4a4f8cf7896ddb05300
