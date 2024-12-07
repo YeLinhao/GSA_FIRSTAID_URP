@@ -143,4 +143,11 @@ public class NPCController : MonoBehaviour
         QuizList[QuizType].SetActive(true);
     }
 
+    public void NPCHealed()
+    {
+        isBeingSaved.BubbleVanish();
+        isBeingSaved.NPCHealed();
+
+    }
+
 }

@@ -10,11 +10,15 @@ public class PlayerInteract : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.CompareTag("Player"))
+        if (!npc.isHealed && npc.CheckSickType() >= 0 )
         {
-            isPlayerInRange = true;
-            NPCController.Instance.SavingHint.gameObject.SetActive(true);
+            if (other.CompareTag("Player"))
+            {
+                isPlayerInRange = true;
+                NPCController.Instance.SavingHint.gameObject.SetActive(true);
+            }
         }
+       
     }
     private void OnTriggerExit(Collider other)
     {

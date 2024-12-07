@@ -472,7 +472,7 @@ GameObject:
   - component: {fileID: 63941228}
   - component: {fileID: 63941227}
   m_Layer: 5
-  m_Name: Main Menu (1)
+  m_Name: Cancel
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1920,12 +1920,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 56b18d36ad47646428fc6aabd96eb870,
     type: 3}
   m_PrefabInstance: {fileID: 276772390}
-  m_PrefabAsset: {fileID: 0}
---- !u!1 &282288856 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 8544756007263496304, guid: 115fb91a881b83b4a8de98825a5e5d0e,
-    type: 3}
-  m_PrefabInstance: {fileID: 320689649}
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &295122735
 PrefabInstance:
@@ -10619,8 +10613,18 @@ MonoBehaviour:
   InteractRange: 2
   collCenter: {fileID: 2146930844}
   isShocked: 0
-  isHeated: 0
-  Quiz: {fileID: 282288856}
+  isHeatStroked: 0
+  isTickBited: 0
+  isAsthma: 0
+  isChoked: 0
+  isBleeding: 0
+  isConvulsiveSeizure: 0
+  isNoseBleeding: 0
+  isTwisted: 0
+  isDiabetic: 0
+  isHealed: 0
+  Bubble: {fileID: 0}
+  BubbleSpritePool: {fileID: 0}
 --- !u!4 &1326261086
 Transform:
   m_ObjectHideFlags: 0
@@ -16250,7 +16254,7 @@ GameObject:
   - component: {fileID: 1936277171}
   - component: {fileID: 1936277170}
   m_Layer: 5
-  m_Name: GameObject
+  m_Name: GameEnd
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -17090,7 +17094,7 @@ MonoBehaviour:
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
-          m_StringArgument: 01UITest
+          m_StringArgument: 00Begin
           m_BoolArgument: 0
         m_CallState: 2
 --- !u!114 &2000759357
@@ -17405,7 +17409,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &2085052791
 RectTransform:
   m_ObjectHideFlags: 0
@@ -17618,7 +17622,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 0.5}
   m_AnchorMax: {x: 1, y: 0.5}
-  m_AnchoredPosition: {x: -142.59334, y: -1.3659011}
+  m_AnchoredPosition: {x: -142.59308, y: -1.3660583}
   m_SizeDelta: {x: 221.1984, y: 61.7422}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1001 &2130036872

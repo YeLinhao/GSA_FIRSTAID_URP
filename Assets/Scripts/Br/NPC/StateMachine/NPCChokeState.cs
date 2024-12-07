@@ -22,5 +22,9 @@ public class NPCChokeState : NPCState
     public override void Update()
     {
         base.Update();
+        if (npcBase.isHealed)
+        {
+            stateMachine.ChangeState(npcBase.healedState);
+        }
     }
 }
