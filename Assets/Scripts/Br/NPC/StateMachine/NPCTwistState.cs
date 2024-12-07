@@ -11,6 +11,7 @@ public class NPCTwistState : NPCState
     public override void Enter()
     {
         base.Enter();
+        base.npcBase.BubbleSpawn();
     }
 
     public override void Exit()
