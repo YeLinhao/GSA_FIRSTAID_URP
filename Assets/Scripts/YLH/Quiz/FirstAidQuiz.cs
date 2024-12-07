@@ -91,8 +91,11 @@ public class FirstAidQuiz: MonoBehaviour
         if (isCorrect)
         {
             Debug.Log("Correct! You completed the first aid sequence.");
-            ScoreManager.Instance.score++;
+            
+            ScoreManager.Instance.score++;//Add Score
+            NPCController.Instance.NPCHealed();//Change Bool and Vanish Bubble
             this.gameObject.SetActive(false);
+
             // Reset Image in AnswerSlots
             foreach ( Button btn in AnswerSlots)
             {

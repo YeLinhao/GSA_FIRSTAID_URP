@@ -22,9 +22,9 @@ public class NPCShockedState : NPCState
     public override void Update()
     {
         base.Update();
-        if (npcBase.isHealed == true)
+        if (npcBase.isHealed)
         {
-            //stateMachine.ChangeState(npcBase.);
+            stateMachine.ChangeState(npcBase.healedState);
         }
     }
 }

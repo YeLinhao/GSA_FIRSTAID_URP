@@ -35,7 +35,6 @@ public class NPC : Entity
     public bool isNoseBleeding = false;
     public bool isTwisted = false;
     public bool isDiabetic = false;
-
     public bool isHealed = false;
 
     public GameObject Bubble;
@@ -51,7 +50,7 @@ public class NPC : Entity
         tickBiteState = new NPCTickBiteState(stateMachine, this, "TickBite");
         asthmaState = new NPCAsthmaState(stateMachine, this, "Asthma");
         chokeState = new NPCChokeState(stateMachine, this, "Choke");
-        bleedingState = new NPCBleedingState(stateMachine, this, "Bleeidng");
+        bleedingState = new NPCBleedingState(stateMachine, this, "Bleeding");
         CSState = new NPCConvulsiveSeizureState(stateMachine, this, "CS");
         twistState = new NPCTwistState(stateMachine, this, "twist");
         diabeticState = new NPCDiabeticState(stateMachine, this, "diabetic");
@@ -147,4 +146,34 @@ public class NPC : Entity
 
         child.GetComponent<SpriteRenderer>().sprite = BubbleSpritePool.BubbleSprites[SickType]; 
     }
+
+    public void BubbleVanish()
+    {
+        Transform bubbleTransform = transform.Find("Bubble(Clone)");
+
+        // 检查是否找到子物体
+        if (bubbleTransform != null)
+        {
+            // 销毁子物体
+            Destroy(bubbleTransform.gameObject);
+            Debug.Log("已销毁子物体 'Bubble'");
+        }
+    }
+
+    public void NPCHealed()
+    {
+        isTickBited = false;
+        isAsthma = false;
+        isHeatStroked = false;
+        isShocked = false;
+        isChoked = false;
+        isBleeding = false;
+        isConvulsiveSeizure = false;
+        isNoseBleeding = false;
+        isTwisted = false;
+        isDiabetic = false;
+
+        isHealed = true;
+    }
+
 }
