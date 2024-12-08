@@ -6,12 +6,10 @@ using UnityEngine.SceneManagement;
 
 public class Star : MonoBehaviour
 {
-    
-  
-  
-    [SerializeField] private float SocreNum = 0f;
+    public int OneStarScore;
+    public int TwoStarScore;
+    public int ThreeStarScore;
 
-    public Text ScoreText;
 
     private float currentFillTime;
 
@@ -23,7 +21,7 @@ public class Star : MonoBehaviour
     void Start()
     {
         
-        ScoreText.text = SocreNum.ToString();
+
     }
 
     void Update()
@@ -48,20 +46,20 @@ public class Star : MonoBehaviour
     {
         winPanel.SetActive(true);
 
-        if (SocreNum < 4)
+        if (ScoreManager.Instance.score >= OneStarScore)
         {
             stars[0].SetActive(true);
             yield return new WaitForSeconds(1.0f);
 
         }
-        else if (SocreNum < 6)
+        else if (ScoreManager.Instance.score >= TwoStarScore)
         {
             stars[0].SetActive(true);
             yield return new WaitForSeconds(1.0f);
             stars[1].SetActive(true);
 
         }
-        else
+        else if (ScoreManager.Instance.score >= ThreeStarScore)
         {
             stars[0].SetActive(true);
             yield return new WaitForSeconds(1.0f);

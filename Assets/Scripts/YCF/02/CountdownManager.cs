@@ -54,6 +54,7 @@ public class CountdownManager : MonoBehaviour
             yield return null;
         }
 
+        //time is up
         Ambulance.SetActive(true);
 
     }

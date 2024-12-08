@@ -193,6 +193,17 @@ public class NPC : Entity
         isDiabetic = false;
 
         isHealed = true;
+
+        if (GameManager.Instance.GameMode == 0|| GameManager.Instance.GameMode == 2||GameManager.Instance.GameMode == 5)
+        {
+            if (NPCController.Instance.Tutorial_CheckIfEveryoneHealed())
+            {
+                ScoreManager.Instance.Ambulance.SetActive(true);
+            }
+            
+
+        }
+        
     }
 
 }

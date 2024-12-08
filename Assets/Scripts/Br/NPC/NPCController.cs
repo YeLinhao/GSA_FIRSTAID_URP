@@ -157,4 +157,20 @@ public class NPCController : MonoBehaviour
 
     }
 
+    public bool Tutorial_CheckIfEveryoneHealed()
+    {
+        List<NPC> Checknpcs = new List<NPC>(FindObjectsOfType<NPC>());
+        bool IfEveryoneHealed = true;
+
+        foreach (var npc in Checknpcs)
+        {
+            if (npc.isHealed == false)
+            {
+                IfEveryoneHealed = false;
+            }
+        }
+
+        return IfEveryoneHealed;
+    }
+
 }
