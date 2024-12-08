@@ -167,6 +167,10 @@ PrefabInstance:
       propertyPath: m_TagString
       value: NPC
       objectReference: {fileID: 0}
+    - target: {fileID: 187826, guid: 46731834ed4f8824abf67214b5ccecb2, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 452662, guid: 46731834ed4f8824abf67214b5ccecb2, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
