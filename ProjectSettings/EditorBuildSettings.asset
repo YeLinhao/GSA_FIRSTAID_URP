@@ -9,11 +9,11 @@ EditorBuildSettings:
     path: Assets/Scenes/00Begin.unity
     guid: e0f1d10d67a1ced4dbb163703e4714d5
   - enabled: 1
-    path: Assets/Scenes/01Level 1.unity
-    guid: 9fc0d4010bbf28b4594072e72b8655ab
-  - enabled: 0
-    path: Assets/Scenes/Level1-Factory.unity
-    guid: 65013a03333bcbc48b0ad5d7da41f21c
+    path: Assets/Scenes/Factory-Tutorial.unity
+    guid: df147d3142c8c6e4b9adb0ea6fe0ee78
+  - enabled: 1
+    path: Assets/Scenes/Factory-PlayGame.unity
+    guid: 5c8bf620b8a11ab41a4396962f924c8e
   - enabled: 1
     path: Assets/Scenes/School-tutorial.unity
     guid: 1924ef1d29cc4354da5b996aadd2051d
@@ -26,13 +26,4 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Park-PlayGame.unity
     guid: e97b21f1625b5aa4797ba56e5d58b054
-  - enabled: 0
-    path: Assets/Scenes/02Level 2.unity
-    guid: d68d25c6b4d2b4a4f8cf7896ddb05300
-  - enabled: 0
-    path: Assets/Scenes/level1UITest.unity
-    guid: b8c47f9eee77ed14885c6006ef3598ce
-  - enabled: 0
-    path: Assets/Scenes/SampleScene.unity
-    guid: 99c9720ab356a0642a771bea13969a05
   m_configObjects: {}
