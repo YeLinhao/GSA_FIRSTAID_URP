@@ -7,7 +7,8 @@ public class ScoreManager : MonoBehaviour
 {
  
     public static ScoreManager Instance;
-    public int score;
+    public float score;
+    public float totalWaitingTime;
     public TMP_Text scoreText;
     void Awake()
     {
@@ -22,6 +23,6 @@ public class ScoreManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        scoreText.text = "Score:" + score.ToString();
+        scoreText.text = "Score:" + ((int)score).ToString();
     }
 }

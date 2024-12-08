@@ -40,6 +40,9 @@ public class NPC : Entity
     public GameObject Bubble;
     public BubbleSpriteSO BubbleSpritePool;
 
+    public float SickTime = 0f;
+    public float HealTime = 0f;
+
     protected override void Awake()
     {
         base.Awake();
@@ -68,6 +71,16 @@ public class NPC : Entity
     {
         base.Update();
         stateMachine.currentState.Update();
+
+        if (CheckIfSick() == false)
+        {
+            SickTime += Time.deltaTime;
+        }
+        if (isHealed == false)
+        {
+            HealTime += Time.deltaTime;
+        }
+
     }
 
     public virtual void AssignLastAnimName(string _animBoolName) => lastAnimBoolName = _animBoolName;
@@ -163,8 +176,10 @@ public class NPC : Entity
     public void NPCHealed()
     {
 
-
-        ScoreManager.Instance.score++;
+        float AddedScore;
+        AddedScore = 100f - (HealTime - SickTime); 
+        ScoreManager.Instance.score += AddedScore;
+        ScoreManager.Instance.totalWaitingTime += HealTime - SickTime;
 
         isTickBited = false;
         isAsthma = false;
