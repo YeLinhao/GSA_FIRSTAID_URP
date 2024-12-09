@@ -16,7 +16,8 @@ public class NPCController : MonoBehaviour
     public List<GameObject> VideoList;
     public List<GameObject> QuizList;
 
-    public TMP_Text SavingHint;
+    public TMP_Text savingHint;
+    public ScreenFlash screenFlash;
 
     void Awake()
     {
@@ -166,7 +167,7 @@ public class NPCController : MonoBehaviour
             quizobject.GetComponent<FirstAidQuiz>().SetupQuiz();
             quizobject.SetActive(false);
         }
-        SavingHint.gameObject.SetActive(false);
+        savingHint.gameObject.SetActive(false);
 
     }
 
