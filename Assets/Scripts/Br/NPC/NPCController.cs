@@ -150,12 +150,34 @@ public class NPCController : MonoBehaviour
         QuizList[QuizType].SetActive(true);
     }
 
+
     public void NPCHealed()
     {
         isBeingSaved.BubbleVanish();
         isBeingSaved.NPCHealed();
 
     }
+
+
+    public void ClearAllUIWhenFinished()
+    {
+        foreach(var quizobject in QuizList)
+        {
+            quizobject.GetComponent<FirstAidQuiz>().SetupQuiz();
+            quizobject.SetActive(false);
+        }
+        SavingHint.gameObject.SetActive(false);
+
+    }
+
+    public void LockInputWhenFinished()
+    {
+        var player = GameObject.FindGameObjectWithTag("Player");
+        Destroy(player);
+        
+    }
+
+
 
     public bool Tutorial_CheckIfEveryoneHealed()
     {

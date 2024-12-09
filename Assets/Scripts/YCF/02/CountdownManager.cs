@@ -56,9 +56,12 @@ public class CountdownManager : MonoBehaviour
 
         //time is up
         Ambulance.SetActive(true);
-
+        NPCController.Instance.ClearAllUIWhenFinished();
+        NPCController.Instance.LockInputWhenFinished();
     }
 
     
+
+
    
 }

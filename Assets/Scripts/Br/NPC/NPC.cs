@@ -23,8 +23,8 @@ public class NPC : Entity
     public NPCHealedState healedState { get; private set; }
     #endregion
 
-    //Todo:µ±NPC×´Ì¬¸Ä±äÊ±£¬Í·¶¥ÆøÅİ¸Ä±ä
-    //Todo:NPCÅö×²Ìå idle¶¯»­£¨ÔÚÔ­µØÁï´ï£© Éú²¡¶¯»­£¨ÄÔ´üÔÎ£© ÖÎÓú¶¯»­£¨ÌÉµ¹£©
+    //Todo:ï¿½ï¿½NPC×´Ì¬ï¿½Ä±ï¿½Ê±ï¿½ï¿½Í·ï¿½ï¿½ï¿½ï¿½ï¿½İ¸Ä±ï¿½
+    //Todo:NPCï¿½ï¿½×²ï¿½ï¿½ idleï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ô­ï¿½ï¿½ï¿½ï¿½ï£© ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ô´ï¿½ï¿½Î£ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Éµï¿½ï¿½ï¿½
     public bool isShocked = false;
     public bool isHeatStroked = false;
     public bool isTickBited = false;
@@ -90,7 +90,6 @@ public class NPC : Entity
         Debug.Log("Interact!");
         if (CheckIfSick())//Only Sick people can be saved
         {
-            //Todo:¸ù¾İnpcÉíÉÏµÄ±ê¼Ç´¥·¢ÏàÓ¦µÄÊÓÆµ/Quiz
             if (GameManager.Instance == null)
             {
                 Debug.Log("Please start with Begin Scene");
@@ -151,10 +150,10 @@ public class NPC : Entity
     {
         int SickType = CheckSickType();
 
-        // ¼ÆËãÉú³ÉÎ»ÖÃ£¨Ïà¶ÔÓÚµ±Ç°ÎïÌåµÄÎ»ÖÃÆ«ÒÆ£©
+        // ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Î»ï¿½Ã£ï¿½ï¿½ï¿½ï¿½ï¿½Úµï¿½Ç°ï¿½ï¿½ï¿½ï¿½ï¿½Î»ï¿½ï¿½Æ«ï¿½Æ£ï¿½
         Vector3 spawnPosition = transform.position + new Vector3(0, 3, 0);
 
-        // ÊµÀı»¯Prefab²¢ÉèÖÃÎªµ±Ç°ÎïÌåµÄ×ÓÎïÌå
+        // Êµï¿½ï¿½ï¿½ï¿½Prefabï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Îªï¿½ï¿½Ç°ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
         GameObject child = Instantiate(Bubble, spawnPosition, Quaternion.identity, transform);
 
         child.GetComponent<SpriteRenderer>().sprite = BubbleSpritePool.BubbleSprites[SickType]; 
@@ -164,12 +163,12 @@ public class NPC : Entity
     {
         Transform bubbleTransform = transform.Find("Bubble(Clone)");
 
-        // ¼ì²éÊÇ·ñÕÒµ½×ÓÎïÌå
+        // ï¿½ï¿½ï¿½ï¿½Ç·ï¿½ï¿½Òµï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
         if (bubbleTransform != null)
         {
-            // Ïú»Ù×ÓÎïÌå
+            // ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
             Destroy(bubbleTransform.gameObject);
-            Debug.Log("ÒÑÏú»Ù×ÓÎïÌå 'Bubble'");
+            Debug.Log("ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ 'Bubble'");
         }
     }
 

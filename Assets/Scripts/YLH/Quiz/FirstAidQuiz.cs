@@ -26,7 +26,7 @@ public class FirstAidQuiz: MonoBehaviour
     }
 
     // Function to randomize the options and display them
-    void SetupQuiz()
+    public void SetupQuiz()
     {
         randomizedOptionSprites.Clear();
         AddCorrectOptions(randomizedOptionSprites,CorrectAnswer);
