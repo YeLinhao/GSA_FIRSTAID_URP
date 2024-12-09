@@ -15,7 +15,7 @@ public class PlayerInteract : MonoBehaviour
             if (other.CompareTag("Player"))
             {
                 isPlayerInRange = true;
-                NPCController.Instance.SavingHint.gameObject.SetActive(true);
+                NPCController.Instance.savingHint.gameObject.SetActive(true);
             }
         }
        
@@ -25,7 +25,7 @@ public class PlayerInteract : MonoBehaviour
         if (other.CompareTag("Player"))
         {
             isPlayerInRange = false;
-            NPCController.Instance.SavingHint.gameObject.SetActive(false);
+            NPCController.Instance.savingHint.gameObject.SetActive(false);
         }
     }
 

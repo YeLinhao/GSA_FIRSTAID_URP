@@ -91,10 +91,12 @@ public class FirstAidQuiz: MonoBehaviour
         if (isCorrect)
         {
             Debug.Log("Correct! You completed the first aid sequence.");
+            NPCController.Instance.screenFlash.Flash(Color.green, 0.5f);//FlashScrren to mention
             
             ScoreManager.Instance.score++;//Add Score
             NPCController.Instance.NPCHealed();//Change Bool and Vanish Bubble
             this.gameObject.SetActive(false);
+            
 
             // Reset Image in AnswerSlots
             foreach ( Button btn in AnswerSlots)
@@ -109,6 +111,7 @@ public class FirstAidQuiz: MonoBehaviour
         }
         else
         {
+            NPCController.Instance.screenFlash.Flash(Color.red, 0.5f);
             Debug.Log("Incorrect! Please try again.");
         }
     }
