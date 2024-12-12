@@ -15,23 +15,27 @@ public class volumeController : MonoBehaviour
     void Start()
     {
         slider = GetComponent<Slider>();
-        soundController = FindObjectOfType<SoundController>();
+        soundController = SoundController.instance;
         audioSource = soundController.GetComponent<AudioSource>();
-        if(soundController == null && slider != null)
+        if(soundController != null && slider != null)
         {
-            slider.value = soundController.GetGlobalVolume();
+            slider.value = audioSource.volume;
             slider.onValueChanged.AddListener(OnVolumeChanged);
         }
     }
 
     private void Update()
     {
-        if(soundController == null) {
-            soundController = FindObjectOfType<SoundController>();
-            audioSource = soundController.GetComponent<AudioSource>();
+        if (soundController != null && slider != null)
+        {
+            slider.onValueChanged.AddListener(OnVolumeChanged);
         }
     }
-
+    public void SetGlobalVolume()
+    {
+        audioSource.volume = slider.value;
+        soundController.UpdateAudioSourceVolumes();
+    }
     public void OnVolumeChanged(float value)
     {
         if (soundController != null)
@@ -39,9 +43,5 @@ public class volumeController : MonoBehaviour
             SetGlobalVolume(); 
         }
     }
-    public void SetGlobalVolume()
-    {
-        audioSource.volume = slider.value * .05f;
-        soundController.UpdateAudioSourceVolumes();
-    }
+
 }

@@ -52,11 +52,6 @@ public class SoundController : MonoBehaviour
     }
 
 
-    public float GetGlobalVolume()
-    {
-        return globalVolume;
-    }
-
     public void UpdateAudioSourceVolumes()
     {
         if (OnClick != null) 
