@@ -59,9 +59,20 @@ public class SoundController : MonoBehaviour
     public void BeQuiet()
     {
         globalVolume = globalVolume * .3f;
+        AudioSource[] audioSources = GetComponents<AudioSource>();
+        foreach (AudioSource audioSource in audioSources)
+        {
+            audioSource.volume = globalVolume;
+        }
+
     }
 
     public void RaiseVolume() {
         globalVolume = globalVolume / .3f;
+        AudioSource[] audioSources = GetComponents<AudioSource>();
+        foreach (AudioSource audioSource in audioSources)
+        {
+            audioSource.volume = globalVolume;
+        }
     }
 }
