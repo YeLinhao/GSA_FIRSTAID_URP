@@ -18,7 +18,7 @@ EditorBuildSettings:
     path: Assets/Scenes/School-tutorial.unity
     guid: 1924ef1d29cc4354da5b996aadd2051d
   - enabled: 1
-    path: Assets/Scenes/School-PlayGame.unity
+    path: Assets/Scenes/School-.unity
     guid: 1ddbc6e7385680b459f390890d9df4ac
   - enabled: 1
     path: Assets/Scenes/Park--tutorial.unity
