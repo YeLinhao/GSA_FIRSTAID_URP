@@ -51,6 +51,14 @@ public class SoundController : MonoBehaviour
 
     }
 
+    public void BeQuiet()
+    {
+        globalVolume = globalVolume * .3f;
+    }
+
+    public void RaiseVolume() {
+        globalVolume = globalVolume / .3f;
+    }
 
     public void UpdateAudioSourceVolumes()
     {
