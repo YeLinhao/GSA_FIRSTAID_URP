@@ -7,14 +7,23 @@ public class SoundController : MonoBehaviour
 {
     public static SoundController instance;
  
+    private float globalVolume = 1.0f;
+
     public AudioSource OnClick;
     public AudioSource Correct;
     public AudioSource False;
     // Start is called before the first frame update
     void Awake() 
     {
-        instance = this;
-        DontDestroyOnLoad(gameObject);
+        if(instance == null)
+        {
+            instance = this;
+            DontDestroyOnLoad(gameObject);
+        }
+        else
+        {
+            Destroy(gameObject);
+        }      
     }
 
 
@@ -42,8 +51,19 @@ public class SoundController : MonoBehaviour
 
     }
 
-    private void Update()
+
+    public float GetGlobalVolume()
     {
-        
+        return globalVolume;
+    }
+
+    public void UpdateAudioSourceVolumes()
+    {
+        if (OnClick != null) 
+            OnClick.volume = globalVolume;
+        if (Correct != null) 
+            Correct.volume = globalVolume;
+        if (False != null) 
+            False.volume = globalVolume;
     }
 }

@@ -3471,34 +3471,6 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
---- !u!114 &1647218355
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3754552690709956985}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7cfc97bd7d92312499fcfc3475bc7f04, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  pauseMenuUI: {fileID: 0}
-  pauseButton: {fileID: 0}
---- !u!114 &1647218356
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5250594561893907244}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b36bd8ba09fb24a41947d4c899ac9e17, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  slider: {fileID: 4673543454234882584}
-  audiobg: {fileID: 0}
 --- !u!1 &1702430831
 GameObject:
   m_ObjectHideFlags: 0
@@ -4671,9 +4643,21 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1647218355}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: UIController, Assembly-CSharp
         m_MethodName: QuitApplication
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1628217203}
+        m_TargetAssemblyTypeName: SoundController, Assembly-CSharp
+        m_MethodName: PlayOnClick
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -4704,7 +4688,6 @@ GameObject:
   - component: {fileID: 1669420071607148787}
   - component: {fileID: 4903239023499100557}
   - component: {fileID: 8538374152358459775}
-  - component: {fileID: 1647218355}
   m_Layer: 5
   m_Name: Canvas
   m_TagString: Untagged
@@ -4996,9 +4979,9 @@ MonoBehaviour:
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 5250594561893907245}
         m_TargetAssemblyTypeName: volumeController, Assembly-CSharp
-        m_MethodName: VolumeController
+        m_MethodName: SetGlobalVolume
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -5179,7 +5162,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4647126278306132030}
   - component: {fileID: 4673543454234882584}
-  - component: {fileID: 1647218356}
+  - component: {fileID: 5250594561893907245}
   m_Layer: 5
   m_Name: Slider
   m_TagString: Untagged
@@ -5187,6 +5170,21 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!114 &5250594561893907245
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5250594561893907244}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b36bd8ba09fb24a41947d4c899ac9e17, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  slider: {fileID: 4673543454234882584}
+  soundController: {fileID: 1628217203}
+  audioSource: {fileID: 1628217202}
 --- !u!224 &5346156530917517861
 RectTransform:
   m_ObjectHideFlags: 0
