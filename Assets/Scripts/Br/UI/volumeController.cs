@@ -9,18 +9,18 @@ public class volumeController : MonoBehaviour
 
     public Slider slider;
     public SoundController soundController;
-    public AudioSource audioSource;
-    
 
     void Start()
     {
         slider = GetComponent<Slider>();
         soundController = SoundController.instance;
-        audioSource = soundController.GetComponent<AudioSource>();
-        if(soundController != null && slider != null)
-        {
-            slider.value = audioSource.volume;
-            slider.onValueChanged.AddListener(OnVolumeChanged);
+        AudioSource[] audioSources = soundController.GetComponents<AudioSource>();
+        foreach (AudioSource audioSource in audioSources) {
+            if (soundController != null && slider != null)
+            {
+                slider.value = audioSource.volume;
+                slider.onValueChanged.AddListener(OnVolumeChanged);
+            }
         }
     }
 
@@ -33,8 +33,11 @@ public class volumeController : MonoBehaviour
     }
     public void SetGlobalVolume()
     {
-        audioSource.volume = slider.value;
-        soundController.UpdateAudioSourceVolumes();
+        AudioSource[] audioSources = soundController.GetComponents<AudioSource>();
+        foreach (AudioSource audioSource in audioSources)
+        {
+            audioSource.volume = slider.value;
+        }
     }
     public void OnVolumeChanged(float value)
     {

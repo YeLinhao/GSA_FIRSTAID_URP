@@ -26,6 +26,11 @@ public class SoundController : MonoBehaviour
         }      
     }
 
+    void Update()
+    {
+
+    }
+
 
     public void PlayOnClick() 
     {
@@ -58,15 +63,5 @@ public class SoundController : MonoBehaviour
 
     public void RaiseVolume() {
         globalVolume = globalVolume / .3f;
-    }
-
-    public void UpdateAudioSourceVolumes()
-    {
-        if (OnClick != null) 
-            OnClick.volume = globalVolume;
-        if (Correct != null) 
-            Correct.volume = globalVolume;
-        if (False != null) 
-            False.volume = globalVolume;
     }
 }
