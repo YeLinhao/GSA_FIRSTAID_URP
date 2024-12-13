@@ -15,10 +15,10 @@ EditorBuildSettings:
     path: Assets/Scenes/Factory-PlayGame.unity
     guid: 5c8bf620b8a11ab41a4396962f924c8e
   - enabled: 1
-    path: Assets/Scenes/School-tutorial Nominee.unity
+    path: Assets/Scenes/School-tutorial.unity
     guid: c08c853aae3bbd542891c1bb4dc30501
   - enabled: 1
-    path: Assets/Scenes/School-GameNominee.unity
+    path: Assets/Scenes/School-Game.unity
     guid: 57be8d8242c638948b8e8f7cb9e698eb
   - enabled: 1
     path: Assets/Scenes/Park-tutorial.unity
