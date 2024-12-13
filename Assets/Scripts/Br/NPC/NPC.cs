@@ -98,11 +98,14 @@ public class NPC : Entity
             {
                 NPCController.Instance.StartSavingVideo(CheckSickType());
                 NPCController.Instance.isBeingSaved = this;
+                SoundController.instance.BeQuiet();
+
             }
             else if (GameManager.Instance.GameMode >= 0)//if gamemode then quiz
             {
                 NPCController.Instance.StartSavingQuiz(CheckSickType());
                 NPCController.Instance.isBeingSaved = this;
+                SoundController.instance.LowerVolume();
             }
         }
       

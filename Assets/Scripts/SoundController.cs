@@ -8,10 +8,13 @@ public class SoundController : MonoBehaviour
     public static SoundController instance;
  
     private float globalVolume = 1.0f;
+    private float storeVolume;
 
     public AudioSource OnClick;
     public AudioSource Correct;
     public AudioSource False;
+
+    public bool isQuiet = false;
     // Start is called before the first frame update
     void Awake() 
     {
@@ -58,7 +61,9 @@ public class SoundController : MonoBehaviour
 
     public void BeQuiet()
     {
-        globalVolume = globalVolume * .3f;
+        isQuiet = true;
+        storeVolume = globalVolume;
+        globalVolume = 0f;
         AudioSource[] audioSources = GetComponents<AudioSource>();
         foreach (AudioSource audioSource in audioSources)
         {
@@ -67,8 +72,30 @@ public class SoundController : MonoBehaviour
 
     }
 
+    public void DontBeQuiet()
+    {
+        if (isQuiet == true) {
+            globalVolume = storeVolume;
+            AudioSource[] audioSources = GetComponents<AudioSource>();
+            isQuiet = false;
+            foreach (AudioSource audioSource in audioSources)
+            {
+                audioSource.volume = globalVolume * .2f;
+            }
+        }
+    }
+
+    public void LowerVolume() {
+        globalVolume = globalVolume * .2f;
+        AudioSource[] audioSources = GetComponents<AudioSource>();
+        foreach (AudioSource audioSource in audioSources)
+        {
+            audioSource.volume = globalVolume;
+        }
+    }
+
     public void RaiseVolume() {
-        globalVolume = globalVolume / .3f;
+        globalVolume = globalVolume / .2f;
         AudioSource[] audioSources = GetComponents<AudioSource>();
         foreach (AudioSource audioSource in audioSources)
         {
