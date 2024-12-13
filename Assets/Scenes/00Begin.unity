@@ -2088,7 +2088,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -1201, y: 483}
+  m_AnchoredPosition: {x: -1201, y: 513}
   m_SizeDelta: {x: 3061.0889, y: 1693.3704}
   m_Pivot: {x: 0, y: 1}
 --- !u!114 &1046896536
@@ -5038,7 +5038,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &1453572242076487613
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6849,7 +6849,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -1201, y: 661}
+  m_AnchoredPosition: {x: -1201, y: 697}
   m_SizeDelta: {x: 2970.5664, y: 1689.4778}
   m_Pivot: {x: 0, y: 1}
 --- !u!224 &8330434948737576412
@@ -6958,7 +6958,8 @@ MonoBehaviour:
     knowledge.\n\nControls:\nMove: WASD  ;  Sprint: LSHIFT  ;  Jump: Spacebar  ; 
     Interact: E\n\nAll video materials in the game are sourced from authoritative
     medical institutions.\n\n\n\n\n\n\n\n\nSpecial thanks to Brian for his patience
-    and teaching a lot of useful tips in the code section that helped a lot.\n\n\n\n\n"
+    and teaching a lot of useful tips in the code section that helped a lot.\n\nAuthors:
+    Linhao Ye, Boran Wang& Chengfeng Yang\n\n\n\n\n"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
