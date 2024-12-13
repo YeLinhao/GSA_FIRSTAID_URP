@@ -23,6 +23,8 @@ public class FirstAidQuiz: MonoBehaviour
     void Start()
     {
         SetupQuiz();
+        SoundController.instance.DontBeQuiet();
+        SoundController.instance.LowerVolume();
     }
 
     // Function to randomize the options and display them
@@ -91,11 +93,13 @@ public class FirstAidQuiz: MonoBehaviour
         if (isCorrect)
         {
             Debug.Log("Correct! You completed the first aid sequence.");
-            NPCController.Instance.screenFlash.Flash(Color.green, 0.5f);//FlashScrren to mention
+            NPCController.Instance.screenFlash.Flash(Color.green, 0.5f);
+            SoundController.instance.PlayCorrect();//FlashScrren to mention
             
             ScoreManager.Instance.score++;//Add Score
             NPCController.Instance.NPCHealed();//Change Bool and Vanish Bubble
             this.gameObject.SetActive(false);
+            SoundController.instance.RaiseVolume();
             
 
             // Reset Image in AnswerSlots
@@ -113,6 +117,7 @@ public class FirstAidQuiz: MonoBehaviour
         {
             NPCController.Instance.screenFlash.Flash(Color.red, 0.5f);
             Debug.Log("Incorrect! Please try again.");
+            SoundController.instance.PlayFalse();
         }
     }
 
