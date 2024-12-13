@@ -152,11 +152,8 @@ public class NPC : Entity
     public void BubbleSpawn()
     {
         int SickType = CheckSickType();
-
-        // ��������λ�ã�����ڵ�ǰ�����λ��ƫ�ƣ�
+   
         Vector3 spawnPosition = transform.position + new Vector3(0, 3, 0);
-
-        // ʵ����Prefab������Ϊ��ǰ�����������
         GameObject child = Instantiate(Bubble, spawnPosition, Quaternion.identity, transform);
 
         child.GetComponent<SpriteRenderer>().sprite = BubbleSpritePool.BubbleSprites[SickType]; 
@@ -164,14 +161,12 @@ public class NPC : Entity
 
     public void BubbleVanish()
     {
+        //Stupid,unefficient but works well :)
         Transform bubbleTransform = transform.Find("Bubble(Clone)");
 
-        // ����Ƿ��ҵ�������
         if (bubbleTransform != null)
         {
-            // ����������
             Destroy(bubbleTransform.gameObject);
-            Debug.Log("������������ 'Bubble'");
         }
     }
 
