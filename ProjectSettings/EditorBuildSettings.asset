@@ -21,9 +21,12 @@ EditorBuildSettings:
     path: Assets/Scenes/School-.unity
     guid: 1ddbc6e7385680b459f390890d9df4ac
   - enabled: 1
-    path: Assets/Scenes/Park--tutorial.unity
-    guid: 38813be58c46e984bbcb37f4a06779bf
+    path: Assets/Scenes/Test.unity
+    guid: 48495423c9ccd95409cf57ed4362f514
+  - enabled: 1
+    path: Assets/Scenes/Park-tutorial.unity
+    guid: 7942c6f5291e8774fbd019bf213bae77
   - enabled: 1
     path: Assets/Scenes/Park-PlayGame.unity
-    guid: 9da4e0dd49e7993429205be4f78dc1ef
+    guid: 901f522b131426841a14b9765fb05d59
   m_configObjects: {}
