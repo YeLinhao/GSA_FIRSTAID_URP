@@ -19505,12 +19505,11 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "   Welcome to Rescue Hero!\n\n   This is a busy factory where accidents
-    can happen at any moment\u2014someone faints due to electric shock,heat stroke
-    or bleeding.\n   It's a tutorial level now, all you need to do is watch video,
-    and select first-aid step afterwards.\n   Then in game mode your task is to rescue
-    randomly hurted ones ASAP.\n\n    Time is life. Can you be their hope? Showcase
-    your rescue skills!"
+  m_text: "   Welcome to Rescue Hero!\n\n      This is a school where accidents can
+    happen at any moment.\n   It's a tutorial level now, all you need to do is watch
+    video, and select first-aid step afterwards.\n   Then in game mode your task
+    is to rescue randomly hurted ones ASAP.\n\n    Time is life. Can you be their
+    hope? Showcase your rescue skills!"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 5302535af1044152a457ed104f1f4b91, type: 2}
   m_sharedMaterial: {fileID: 2164040, guid: 5302535af1044152a457ed104f1f4b91, type: 2}
