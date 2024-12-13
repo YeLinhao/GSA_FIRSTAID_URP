@@ -46,13 +46,13 @@ public class Star : MonoBehaviour
     {
         winPanel.SetActive(true);
 
-        if (ScoreManager.Instance.score >= OneStarScore)
+        if (ScoreManager.Instance.score >= OneStarScore && ScoreManager.Instance.score < TwoStarScore)
         {
             stars[0].SetActive(true);
             yield return new WaitForSeconds(1.0f);
 
         }
-        else if (ScoreManager.Instance.score >= TwoStarScore)
+        else if (ScoreManager.Instance.score >= TwoStarScore && ScoreManager.Instance.score < ThreeStarScore)
         {
             stars[0].SetActive(true);
             yield return new WaitForSeconds(1.0f);

@@ -94,14 +94,14 @@ public class NPC : Entity
             {
                 Debug.Log("Please start with Begin Scene");
             }
-            else if (GameManager.Instance.GameMode == 0)//if tutorial then video
+            else if (GameManager.Instance.GameMode % 3 == 0)//if tutorial then video
             {
                 NPCController.Instance.StartSavingVideo(CheckSickType());
                 NPCController.Instance.isBeingSaved = this;
                 SoundController.instance.BeQuiet();
 
             }
-            else if (GameManager.Instance.GameMode >= 0)//if gamemode then quiz
+            else if (GameManager.Instance.GameMode % 3 != 0)//if gamemode then quiz
             {
                 NPCController.Instance.StartSavingQuiz(CheckSickType());
                 NPCController.Instance.isBeingSaved = this;
@@ -191,16 +191,12 @@ public class NPC : Entity
 
         isHealed = true;
 
-        if (GameManager.Instance.GameMode == 0|| GameManager.Instance.GameMode == 2||GameManager.Instance.GameMode == 5)
-        {
-            if (NPCController.Instance.Tutorial_CheckIfEveryoneHealed())
-            {
-                ScoreManager.Instance.Ambulance.SetActive(true);
-            }
-            
 
-        }
-        
+            if (NPCController.Instance.CheckIfEveryoneHealed())
+            {
+                ScoreManager.Instance.GameEnd();
+            }
+
     }
 
 }

@@ -180,7 +180,7 @@ public class NPCController : MonoBehaviour
 
 
 
-    public bool Tutorial_CheckIfEveryoneHealed()
+    public bool CheckIfEveryoneHealed()
     {
         List<NPC> Checknpcs = new List<NPC>(FindObjectsOfType<NPC>());
         bool IfEveryoneHealed = true;

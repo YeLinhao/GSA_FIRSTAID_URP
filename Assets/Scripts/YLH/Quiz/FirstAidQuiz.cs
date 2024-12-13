@@ -124,6 +124,11 @@ public class FirstAidQuiz: MonoBehaviour
     // This function should be connected to UI events where players can drag and drop or select images.
     public void OnOptionSelected(int BtnID)
     {
+        if (TempAnsNum >= AnswerSlots.Count)
+        {
+            TempAnsNum = AnswerSlots.Count;
+            return;
+        }
         //Add sprite you clicked to the first empty slot
         for (int i = 0; i < AnswerSlots.Count; i++)
         {

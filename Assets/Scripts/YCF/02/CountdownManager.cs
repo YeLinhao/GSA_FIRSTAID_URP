@@ -9,16 +9,24 @@ public class CountdownManager : MonoBehaviour
     public Image timeFillImage;
     public GameObject Ambulance;
 
-    public float fillCountdownDuration = 10f; 
-    private float currentFillTime;
+    public float fillCountdownDuration; 
+    public float currentFillTime;
    
 
     void Start()
     {
         StartCoroutine(StartCountdown());
-        Ambulance.SetActive(false );
+        Ambulance.SetActive(false);
 
+        if (GameManager.Instance.GameMode % 3 == 1)
+        {
+            fillCountdownDuration = 150f;
+        }
 
+        if (GameManager.Instance.GameMode % 3 == 2)
+        {
+            fillCountdownDuration = 70f;
+        }
     }
 
  
